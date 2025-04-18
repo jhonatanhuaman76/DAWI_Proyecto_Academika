@@ -14,7 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserServiceImp implements UserService {
 
-    public final UserRepository repository;
+    private final UserRepository repository;
     private final UserMapper mapper;
 
     @Override
