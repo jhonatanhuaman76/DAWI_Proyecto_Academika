@@ -9,6 +9,7 @@ import com.academika.academika.service.CursoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -26,6 +27,7 @@ public class CursoServiceImp implements CursoService {
     }
 
     public CursoResponseDTO registrar(CursoRequestDTO requestDTO) {
+        requestDTO.setFecha(LocalDate.now());
         return mapper.toDTO(repository.save(mapper.toEntity(requestDTO)));
     }
 }
