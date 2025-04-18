@@ -16,20 +16,23 @@ import java.util.List;
 public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idCurso")
+    @Column(name = "id_curso")
     private Long id;
 
-    @Column(name = "tituloCurso", length = 150, nullable = false)
+    @Column(name = "titulo_curso", length = 150, nullable = false)
     private String titulo;
 
-    @Column(name = "descripCurso", length = 300, nullable = false)
+    @Column(name = "descrip_curso", length = 300, nullable = false)
     private String descrip;
 
-    @Column(name = "precioCurso", nullable = false)
+    @Column(name = "precio_curso", nullable = false)
     private Double precio;
 
-    @Column(name = "fechaCreacionCurso", nullable = false)
+    @Column(name = "fecha_creacion_curso", nullable = false)
     private LocalDate fecha;
+
+    @Column(name = "miniatura_curso", nullable = false)
+    private String miniatura;
 
     @ManyToOne
     @JoinColumn(name = "categoria_id")

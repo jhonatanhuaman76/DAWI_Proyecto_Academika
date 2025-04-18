@@ -13,16 +13,16 @@ import lombok.*;
 public class Capitulo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idCapitulo")
+    @Column(name = "id_capitulo")
     private Long id;
 
-    @Column(name = "tituloCapitulo", length = 150, nullable = false)
+    @Column(name = "titulo_capitulo", length = 150, nullable = false)
     private String titulo;
 
-    @Column(name = "urlCapitulo", length = 300, nullable = false)
+    @Column(name = "url_capitulo", length = 300, nullable = false)
     private String url;
 
-    @Column(name = "ordenCapitulo", nullable = false)
+    @Column(name = "orden_capitulo", nullable = false)
     private Long orden;
 
     @ManyToOne

@@ -15,13 +15,13 @@ import java.util.List;
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idCateg")
+    @Column(name = "id_categ")
     private Long id;
 
-    @Column(name = "nombreCateg", length = 100, nullable = false)
+    @Column(name = "nombre_categ", length = 100, nullable = false)
     private String nombre;
 
-    @Column(name = "descripCateg", length = 300, nullable = false)
+    @Column(name = "descrip_categ", length = 300, nullable = false)
     private String descrip;
 
     @OneToMany(mappedBy = "categoria")

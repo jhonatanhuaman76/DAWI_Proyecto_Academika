@@ -16,22 +16,22 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idUser")
+    @Column(name = "id_user")
     private Long id;
 
-    @Column(name = "nombreUser", length = 250, nullable = false)
+    @Column(name = "nombre_user", length = 250, nullable = false)
     private String nombre;
 
-    @Column(name = "fechaNacUser", nullable = false)
+    @Column(name = "fecha_nac_user", nullable = false)
     private LocalDate fechaNac;
 
-    @Column(name = "emailUser", length = 100, nullable = false, unique = true)
+    @Column(name = "email_user", length = 100, nullable = false, unique = true)
     private String email;
 
-    @Column(name = "passwordUser", length = 250, nullable = false)
+    @Column(name = "password_user", length = 250, nullable = false)
     private String password;
 
-    @Column(name = "rolUser", nullable = false)
+    @Column(name = "rol_user", nullable = false)
     private TipoRolUser rol;
 
     @OneToMany(mappedBy = "instructor")

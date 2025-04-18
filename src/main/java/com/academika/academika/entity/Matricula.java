@@ -17,10 +17,10 @@ import java.time.LocalDate;
 public class Matricula {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idMatricula")
+    @Column(name = "id_matricula")
     private Long id;
 
-    @Column(name = "fechaMatricula", nullable = false)
+    @Column(name = "fecha_matricula", nullable = false)
     private LocalDate fecha;
 
     @ManyToOne
