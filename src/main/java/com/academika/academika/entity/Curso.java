@@ -39,9 +39,9 @@ public class Curso {
     @JoinColumn(name = "instructor_id")
     private User instructor;
 
-    @OneToMany(mappedBy = "tblCurso")
+    @OneToMany(mappedBy = "curso")
     private List<Capitulo> capitulos;
 
-    @OneToMany(mappedBy = "tblCurso")
+    @OneToMany(mappedBy = "curso")
     private List<Matricula> matriculas;
 }

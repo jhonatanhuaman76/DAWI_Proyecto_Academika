@@ -34,9 +34,9 @@ public class User {
     @Column(name = "rolUser", nullable = false)
     private TipoRolUser rol;
 
-    @OneToMany(mappedBy = "tblUser")
+    @OneToMany(mappedBy = "instructor")
     private List<Curso> cursos;
 
-    @OneToMany(mappedBy = "tblUser")
+    @OneToMany(mappedBy = "estudiante")
     private List<Matricula> matriculas;
 }

@@ -24,6 +24,6 @@ public class Categoria {
     @Column(name = "descripCateg", length = 300, nullable = false)
     private String descrip;
 
-    @OneToMany(mappedBy = "tblCategoria")
+    @OneToMany(mappedBy = "categoria")
     private List<Curso> cursos;
 }

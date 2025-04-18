@@ -25,7 +25,7 @@ public class Matricula {
 
     @ManyToOne
     @JoinColumn(name = "estudiante_id")
-    private User user;
+    private User estudiante;
 
     @ManyToOne
     @JoinColumn(name = "curso_id")
