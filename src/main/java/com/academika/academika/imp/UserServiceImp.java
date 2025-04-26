@@ -1,7 +1,7 @@
 package com.academika.academika.imp;
 
-import com.academika.academika.dto.UserRequestDTO;
-import com.academika.academika.dto.UserResponseDTO;
+import com.academika.academika.dto.user.UserRequestDTO;
+import com.academika.academika.dto.user.UserResponseDTO;
 import com.academika.academika.mapper.UserMapper;
 import com.academika.academika.repository.UserRepository;
 import com.academika.academika.service.UserService;

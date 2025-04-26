@@ -1,4 +1,4 @@
-package com.academika.academika.dto;
+package com.academika.academika.dto.curso;
 
 import lombok.Builder;
 import lombok.Data;
@@ -14,6 +14,9 @@ public class CursoResponseDTO {
     private Double precio;
     private LocalDate fecha;
     private String miniatura;
-    private Long categoria;
+    private Long idCate;
+    private String nombreCate;
+    private String descripCate;
     private Long instructor;
+    private String nombreInstructor;
 }

@@ -1,7 +1,7 @@
 package com.academika.academika.mapper;
 
-import com.academika.academika.dto.CursoRequestDTO;
-import com.academika.academika.dto.CursoResponseDTO;
+import com.academika.academika.dto.curso.CursoRequestDTO;
+import com.academika.academika.dto.curso.CursoResponseDTO;
 import com.academika.academika.entity.Categoria;
 import com.academika.academika.entity.Curso;
 import com.academika.academika.entity.User;
@@ -17,7 +17,9 @@ public class CursoMapper {
                 .precio(curso.getPrecio())
                 .fecha(curso.getFecha())
                 .miniatura(curso.getMiniatura())
-                .categoria(curso.getCategoria().getId())
+                .idCate(curso.getCategoria().getId())
+                .nombreCate(curso.getCategoria().getNombre())
+                .descripCate(curso.getCategoria().getDescrip())
                 .instructor(curso.getInstructor().getId())
                 .build();
     }

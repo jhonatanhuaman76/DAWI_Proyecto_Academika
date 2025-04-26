@@ -1,4 +1,4 @@
-package com.academika.academika.dto;
+package com.academika.academika.dto.curso;
 
 import lombok.Builder;
 import lombok.Data;

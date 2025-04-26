@@ -1,10 +1,9 @@
 package com.academika.academika.imp;
 
-import com.academika.academika.dto.CursoRequestDTO;
-import com.academika.academika.dto.CursoResponseDTO;
-import com.academika.academika.entity.Categoria;
+import com.academika.academika.dto.curso.CursoRequestDTO;
+import com.academika.academika.dto.curso.CursoResponseDTO;
 import com.academika.academika.mapper.CursoMapper;
-import com.academika.academika.repository.Cursorepository;
+import com.academika.academika.repository.CursoRepository;
 import com.academika.academika.service.CursoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,11 +14,11 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class CursoServiceImp implements CursoService {
-    private final Cursorepository repository;
+    private final CursoRepository repository;
     private final CursoMapper mapper;
 
-    public List<CursoResponseDTO> listarPorCategoria(Long cateId) {
-        return repository.findByCategoriaId(cateId).stream().map(mapper::toDTO).toList();
+    public List<CursoResponseDTO> listar() {
+        return repository.findAll().stream().map(mapper::toDTO).toList();
     }
 
     public List<CursoResponseDTO> listarMasRecientes() {

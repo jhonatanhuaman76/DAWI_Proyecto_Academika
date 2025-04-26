@@ -1,7 +1,7 @@
 package com.academika.academika.service;
 
-import com.academika.academika.dto.UserRequestDTO;
-import com.academika.academika.dto.UserResponseDTO;
+import com.academika.academika.dto.user.UserRequestDTO;
+import com.academika.academika.dto.user.UserResponseDTO;
 
 import java.util.List;
 

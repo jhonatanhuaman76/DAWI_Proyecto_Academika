@@ -1,7 +1,7 @@
 package com.academika.academika.mapper;
 
-import com.academika.academika.dto.UserRequestDTO;
-import com.academika.academika.dto.UserResponseDTO;
+import com.academika.academika.dto.user.UserRequestDTO;
+import com.academika.academika.dto.user.UserResponseDTO;
 import com.academika.academika.entity.TipoRolUser;
 import com.academika.academika.entity.User;
 import org.springframework.stereotype.Component;

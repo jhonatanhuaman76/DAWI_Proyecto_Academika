@@ -1,7 +1,7 @@
 package com.academika.academika.controller;
 
-import com.academika.academika.dto.UserRequestDTO;
-import com.academika.academika.dto.UserResponseDTO;
+import com.academika.academika.dto.user.UserRequestDTO;
+import com.academika.academika.dto.user.UserResponseDTO;
 import com.academika.academika.imp.UserServiceImp;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
