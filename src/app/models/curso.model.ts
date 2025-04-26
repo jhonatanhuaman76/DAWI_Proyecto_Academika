@@ -5,6 +5,8 @@ descrip: string;
 precio: number;
 fecha: Date;
 miniatura: string;
-categoria: number;
+idCate: number;
+nombreCate: string;
+descripCate: string;
 instructor: number;
 }

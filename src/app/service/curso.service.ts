@@ -11,11 +11,15 @@ export class CursoService {
 
   constructor(private http: HttpClient) { }
 
-  listarPorCategoria(cateId: number) {
-    return this.http.get<ICurso[]>(`${this.apiUrl}/listar/categoria/${cateId}`);
+  listar() {
+    return this.http.get<ICurso[]>(`${this.apiUrl}/listar`);
   }
 
   listarMasRecientes() {
     return this.http.get<ICurso[]>(`${this.apiUrl}/listar/masrecientes`);
+  }
+
+  registrar(curso: ICurso) {
+    return this.http.post<ICurso>(`${this.apiUrl}/registrar`, curso);
   }
 }
