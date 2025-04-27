@@ -1,0 +1,34 @@
+<!--
+<swiper 
+[slidesPerView]="4" 
+[spaceBetween]="30" 
+[navigation]="true" 
+[pagination]="{ clickable: true }" 
+class="mySwiper">
+  <ng-container *ngFor="let curso of cursos">
+    <ng-template swiperSlide>
+      <div class="card h-100">
+        <img [src]="curso.miniatura" class="card-img-top" alt="imagen del curso" />
+        <div class="card-body">
+          <h5 class="card-title">{{ curso.titulo }}</h5>
+          <p class="card-text text-muted">{{ curso.descrip }}</p>
+          <p class="card-text">Precio: <strong>${{ curso.precio }}</strong></p>
+        </div>
+      </div>
+    </ng-template>
+  </ng-container>
+</swiper>
+-->
+<div class="row">
+  <div class="col-md-3 mb-4" *ngFor="let curso of cursos">
+    <div class="card h-100">
+      <img [src]="curso.miniatura" class="card-img-top" alt="imagen del curso">
+
+      <div class="card-body">
+        <h5 class="card-title">{{curso.titulo}}</h5>
+        <p class="card-text text-muted">{{curso.descrip}}</p>
+        <p class="card-text">Precio: <strong>${{curso.precio}}</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
