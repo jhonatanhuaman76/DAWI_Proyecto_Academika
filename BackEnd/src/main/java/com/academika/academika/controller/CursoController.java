@@ -2,7 +2,7 @@ package com.academika.academika.controller;
 
 import com.academika.academika.dto.curso.CursoRequestDTO;
 import com.academika.academika.dto.curso.CursoResponseDTO;
-import com.academika.academika.imp.CursoServiceImp;
+import com.academika.academika.service.CursoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping("/curso")
 @RequiredArgsConstructor
 public class CursoController {
-    private final CursoServiceImp imp;
+    private final CursoService imp;
 
     @GetMapping("/listar")
     public List<CursoResponseDTO> listar() {

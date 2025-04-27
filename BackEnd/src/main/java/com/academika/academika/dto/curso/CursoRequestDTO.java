@@ -13,6 +13,6 @@ public class CursoRequestDTO {
     private Double precio;
     private LocalDate fecha;
     private String miniatura;
-    private Long categoria;
-    private Long instructor;
+    private Long idCategoria;
+    private Long idInstructor;
 }

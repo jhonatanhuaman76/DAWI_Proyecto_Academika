@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface CursoRepository extends JpaRepository<Curso, Long> {
     List<Curso> findTop5ByOrderByFechaDesc();
+    List<Curso> findTop10ByCategoriaIdOrderByFechaDesc(Long categoriaId);
 }

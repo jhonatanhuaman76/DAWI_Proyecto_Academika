@@ -2,8 +2,13 @@ package com.academika.academika.imp;
 
 import com.academika.academika.dto.curso.CursoRequestDTO;
 import com.academika.academika.dto.curso.CursoResponseDTO;
+import com.academika.academika.entity.Categoria;
+import com.academika.academika.entity.Curso;
+import com.academika.academika.entity.User;
 import com.academika.academika.mapper.CursoMapper;
+import com.academika.academika.repository.CategoriaRepository;
 import com.academika.academika.repository.CursoRepository;
+import com.academika.academika.repository.UserRepository;
 import com.academika.academika.service.CursoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,9 +20,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CursoServiceImp implements CursoService {
     private final CursoRepository repository;
+    private final UserRepository userRepository;
+    private final CategoriaRepository categoriaRepository;
     private final CursoMapper mapper;
 
-    public List<CursoResponseDTO> listar() {
+    public List<CursoResponseDTO> listar()
+    {
         return repository.findAll().stream().map(mapper::toDTO).toList();
     }
 
@@ -27,6 +35,10 @@ public class CursoServiceImp implements CursoService {
 
     public CursoResponseDTO registrar(CursoRequestDTO requestDTO) {
         requestDTO.setFecha(LocalDate.now());
-        return mapper.toDTO(repository.save(mapper.toEntity(requestDTO)));
+        Categoria categoria = categoriaRepository.findById(requestDTO.getIdCategoria()).orElse(null);
+        User instructor = userRepository.findById((requestDTO.getIdInstructor())).orElse(null);
+
+        Curso curso = mapper.toEntity(requestDTO, categoria,instructor);
+        return mapper.toDTO(repository.save(curso));
     }
 }

@@ -15,7 +15,7 @@ public class CategoriaController {
     private final CategoriaService imp;
 
     @RequestMapping("/listar-con-cursos")
-    public List<CategoriaCursosDTO> listar() {
+    public List<CategoriaCursosDTO> listarConCursos() {
         return imp.listarConCursos();
     }
 }
