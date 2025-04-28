@@ -1,6 +1,0 @@
-<div *ngFor="let grupo of cursosPorCategoria | keyvalue">
-  <h2>{{ grupo.value.nombre }}</h2>
-  <p>{{ grupo.value.descrip }}</p>
-
-  <app-listar [cursos]="grupo.value.cursos"></app-listar>
-</div>

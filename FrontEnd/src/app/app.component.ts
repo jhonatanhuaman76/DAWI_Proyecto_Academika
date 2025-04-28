@@ -1,13 +1,13 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
 import { RouterOutlet } from '@angular/router';
-import { ListarRecientesComponent } from "./curso/listar-recientes/listar-recientes.component";
-import { ListarPorCategoriaComponent } from './curso/listar-por-categoria/listar-por-categoria.component';
+import { ListarCursosRecientesComponent } from "./home/listar-cursos-recientes/listar-cursos-recientes.component";
+import { ListarCategoriasCursosComponent } from './home/listar-categorias-cursos/listar-categorias-cursos.component';
+import { Swiper } from 'swiper/bundle';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ListarRecientesComponent, ListarPorCategoriaComponent],
+  imports: [RouterOutlet, ListarCursosRecientesComponent, ListarCategoriasCursosComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
 import { CursoService } from '../../service/curso.service';
 import { ICurso } from '../../models/curso.model';
-import { ListarComponent } from "../listar/listar.component";
-import { Swiper } from 'swiper';
+import { ListarCursosComponent } from "../../shared/listar-cursos/listar-cursos.component";
 
 @Component({
-  selector: 'app-listar-recientes',
+  selector: 'app-listar-cursos-recientes',
   standalone: true,
-  imports: [ListarComponent],
-  templateUrl: './listar-recientes.component.html',
-  styleUrl: './listar-recientes.component.css',
+  imports: [ListarCursosComponent],
+  templateUrl: './listar-cursos-recientes.component.html',
+  styleUrl: './listar-cursos-recientes.component.css',
   
 })
-export class ListarRecientesComponent {
+export class ListarCursosRecientesComponent {
 
   cursos: ICurso[] = [];
 

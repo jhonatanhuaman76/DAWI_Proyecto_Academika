@@ -1,0 +1,23 @@
+<div class="container-listado-cursos">
+  <div class="swiper-button-next next-{{idUnico}}" ></div>
+  <div class="swiper-button-prev prev-{{idUnico}}" ></div>
+  <swiper-container 
+  [attr.navigation-next-el]="'.next-' + idUnico"
+  [attr.navigation-prev-el]="'.prev-' + idUnico"
+  [spaceBetween]="50" 
+  [slidesPerView]="4" 
+  class="mySwiper">
+    <ng-container *ngFor="let curso of cursos">
+      <swiper-slide class="swiper-slide">
+        <div class="card h-100 ">
+          <img [src]="curso.miniatura" class="card-img-top" alt="imagen del curso">
+          <div class="card-body">
+            <h5 class="card-title">{{ curso.titulo }}</h5>
+            <p class="card-text text-muted">{{ curso.descrip }}</p>
+            <p class="card-text">Precio: <strong>${{ curso.precio }}</strong></p>
+          </div>
+        </div>
+      </swiper-slide>
+    </ng-container>
+  </swiper-container>
+</div>

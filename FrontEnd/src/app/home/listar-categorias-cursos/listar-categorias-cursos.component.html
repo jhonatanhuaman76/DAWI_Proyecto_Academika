@@ -1,0 +1,5 @@
+<div class="mt-4" *ngFor="let categoria of categorias">
+  <h2>{{ categoria.nombre }}</h2>
+  <p class="mb-4">{{ categoria.descrip }}</p>
+  <app-listar-cursos [cursos]="categoria.list_cursos"></app-listar-cursos>
+</div>
