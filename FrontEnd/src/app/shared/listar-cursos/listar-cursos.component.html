@@ -10,7 +10,11 @@
     <ng-container *ngFor="let curso of cursos">
       <swiper-slide class="swiper-slide">
         <div class="card h-100 ">
-          <img [src]="curso.miniatura" class="card-img-top" alt="imagen del curso">
+          <img 
+          [src]="curso.miniatura" 
+          (error)="onImageError($event)"
+          class="card-img-top"
+          alt="imagen del curso">
           <div class="card-body">
             <h5 class="card-title">{{ curso.titulo }}</h5>
             <p class="card-text text-muted">{{ curso.descrip }}</p>

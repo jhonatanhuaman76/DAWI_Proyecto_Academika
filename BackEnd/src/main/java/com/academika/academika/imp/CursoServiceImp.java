@@ -30,7 +30,7 @@ public class CursoServiceImp implements CursoService {
     }
 
     public List<CursoResponseDTO> listarMasRecientes() {
-        return repository.findTop5ByOrderByFechaDesc().stream().map(mapper::toDTO).toList();
+        return repository.findTop10ByOrderByFechaDesc().stream().map(mapper::toDTO).toList();
     }
 
     public CursoResponseDTO registrar(CursoRequestDTO requestDTO) {

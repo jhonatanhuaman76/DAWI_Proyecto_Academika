@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface CursoRepository extends JpaRepository<Curso, Long> {
-    List<Curso> findTop5ByOrderByFechaDesc();
+    List<Curso> findTop10ByOrderByFechaDesc();
     List<Curso> findTop10ByCategoriaIdOrderByFechaDesc(Long categoriaId);
 }
