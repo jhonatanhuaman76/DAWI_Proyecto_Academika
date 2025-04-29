@@ -10,4 +10,5 @@ public interface CursoService {
     List<CursoResponseDTO> listar();
     List<CursoResponseDTO> listarMasRecientes();
     CursoResponseDTO registrar(CursoRequestDTO requestDTO);
+    CursoResponseDTO buscar(Long id);
 }

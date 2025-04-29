@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academika - Reproducción de Curso</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="estilos.css">
+
+    <style>
+       
+    </style>
+
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="barra-navegacion">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2237/2237844.png" alt="Logo Academika" class="logo-academika">
+                    <span class="text-white fw-bold">Academika</span>
+                </a>
+                <div class="d-flex align-items-center">
+                    <a href="#" class="text-white text-decoration-none me-4">Inicio</a>
+                    <a href="#" class="text-white text-decoration-none me-4">Cursos</a>
+                    <a href="#" class="text-white text-decoration-none me-4">Nosotros</a>
+                    <a href="#" class="text-white text-decoration-none me-4">Contacto</a>
+                    <button class="boton-sesion">Iniciar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="contenedor-principal">
+        <div class="row">
+            <!-- Sección izquierda (video y comentarios) -->
+            <div class="col-lg-8">
+                <!-- Módulo de reproducción de video -->
+                <div class="seccion-video">
+                    <!-- Reproductor de video -->
+                    <div class="contenedor-video">
+                        <iframe class="marco-video" src="https://www.youtube.com/embed/iPrdE5zuXl8" title="Video de la clase" allowfullscreen></iframe>
+                    </div>
+                    
+                    <!-- Información de la clase -->
+                    <div class="informacion-clase">
+                        <h1 class="titulo-clase">Fundamentos de Marketing Digital: Estrategias SEO</h1>
+                        <div class="detalles-clase">
+                            <div class="detalle-item">
+                                <i class="fas fa-graduation-cap detalle-icono"></i>
+                                <span>Marketing Digital 360</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-chalkboard-teacher detalle-icono"></i>
+                                <span>Prof. Laura Martínez</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-list-ol detalle-icono"></i>
+                                <span>Clase 3 de 24</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-clock detalle-icono"></i>
+                                <span>45 minutos</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Barra de interacción -->
+                    <div class="seccion-interaccion">
+                        <div class="acciones-video">
+                            <button class="boton-accion">
+                                <i class="far fa-bookmark"></i> Guardar
+                            </button>
+                            <button class="boton-accion">
+                                <i class="fas fa-download"></i> Recursos
+                            </button>
+                            <button class="boton-accion">
+                                <i class="fas fa-share-alt"></i> Compartir
+                            </button>
+                        </div>
+                        <div class="contenedor-estrellas" title="Calificar esta clase">
+                            <i class="fas fa-star estrella"></i>
+                            <i class="fas fa-star estrella"></i>
+                            <i class="fas fa-star estrella"></i>
+                            <i class="fas fa-star estrella"></i>
+                            <i class="far fa-star estrella"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Sección de comentarios -->
+                    <div class="seccion-comentarios">
+                        <h2 class="titulo-seccion">
+                            <i class="fas fa-comments"></i> Comentarios y dudas
+                        </h2>
+                        
+                        <!-- Formulario para añadir comentario -->
+                        <form class="formulario-comentario">
+                            <div class="mb-3">
+                                <textarea class="form-control entrada-comentario" rows="3" placeholder="Escribe tu comentario o pregunta..."></textarea>
+                            </div>
+                            <div class="text-end">
+                                <button type="submit" class="boton-enviar">Enviar comentario</button>
+                            </div>
+                        </form>
+                        
+                        <!-- Lista de comentarios -->
+                        <div class="lista-comentarios">
+                            <div class="comentario">
+                                <div class="cabecera-comentario">
+                                    <span class="usuario-comentario">Miguel Torres</span>
+                                    <span class="fecha-comentario">Hace 2 días</span>
+                                </div>
+                                <p class="texto-comentario">Excelente clase. ¿Podrías profundizar un poco más sobre cómo implementar keywords en un sitio de e-commerce?</p>
+                                <button class="boton-accion">
+                                    <i class="far fa-thumbs-up"></i> Me gusta (3)
+                                </button>
+                            </div>
+                            
+                            <div class="comentario">
+                                <div class="cabecera-comentario">
+                                    <span class="usuario-comentario">Carmen Sánchez</span>
+                                    <span class="fecha-comentario">Hace 5 días</span>
+                                </div>
+                                <p class="texto-comentario">Gracias por explicar el funcionamiento de Google Analytics tan detalladamente. Me quedó mucho más claro ahora.</p>
+                                <button class="boton-accion">
+                                    <i class="far fa-thumbs-up"></i> Me gusta (7)
+                                </button>
+                            </div>
+                            
+                            <div class="comentario">
+                                <div class="cabecera-comentario">
+                                    <span class="usuario-comentario">Profesora Laura Martínez</span>
+                                    <span class="fecha-comentario">Hace 1 semana</span>
+                                </div>
+                                <p class="texto-comentario">¡Hola a todos! Les recuerdo que en la sección de recursos encontrarán la plantilla de análisis SEO que mencioné en el video. ¡No olviden practicar con sus propios sitios web!</p>
+                                <button class="boton-accion activo">
+                                    <i class="fas fa-thumbs-up"></i> Me gusta (12)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Barra lateral (información del profesor y contenido del curso) -->
+            <div class="col-lg-4">
+                <div class="barra-lateral">
+                    <!-- Perfil del profesor -->
+                    <div class="perfil-profesor">
+                        <img src="https://preparatoria.up.edu.mx/hs-fs/hubfs/profesoras%202.jpg?width=3312&height=2259&name=profesoras%202.jpg" alt="Profesora Laura Martínez" class="avatar-profesor">
+                        <h3 class="nombre-profesor">Laura Martínez</h3>
+                        <p class="especialidad-profesor">Especialista en Marketing Digital</p>
+                        <a href="#" class="contacto-profesor">
+                            <i class="far fa-envelope"></i> Contactar al profesor
+                        </a>
+                    </div>
+                    
+                    <!-- Contenido del curso -->
+                    <div class="contenido-curso">
+                        <h3 class="titulo-contenido">Contenido del curso</h3>
+                        
+                        <ul class="lista-modulos">
+                            <li class="modulo-item">
+                                <button class="boton-modulo" type="button" data-bs-toggle="collapse" data-bs-target="#modulo1">
+                                    Módulo 1: Introducción al Marketing Digital
+                                </button>
+                                <ul class="lista-clases collapse show" id="modulo1">
+                                    <li class="clase-item">
+                                        <a href="#" class="enlace-clase">
+                                            <span>1. Fundamentos del marketing online</span>
+                                            <span class="badge badge-completado">Completado</span>
+                                        </a>
+                                    </li>
+                                    <li class="clase-item">
+                                        <a href="#" class="enlace-clase">
+                                            <span>2. El ecosistema digital</span>
+                                            <span class="badge badge-completado">Completado</span>
+                                        </a>
+                                    </li>
+                                    <li class="clase-item">
+                                        <a href="#" class="enlace-clase activo">
+                                            <span>3. Estrategias SEO</span>
+                                            <span class="badge badge-actual">Actual</span>
+                                        </a>
+                                    </li>
+                                    <li class="clase-item">
+                                        <a href="#" class="enlace-clase">
+                                            <span>4. SEM y publicidad pagada</span>
+                                            <span class="duracion-clase">32 min</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="modulo-item">
+                                <button class="boton-modulo collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#modulo2">
+                                    Módulo 2: Redes Sociales
+                                </button>
+                                <ul class="lista-clases collapse" id="modulo2">
+                                    <li class="clase-item">
+                                        <a href="#" class="enlace-clase">
+                                            <span>5. Estrategia en redes sociales</span>
+                                            <span class="duracion-clase">40 min</span>
+                                        </a>
+                                    </li>
+                                    <li class="clase-item">
+                                        <a href="#" class="enlace-clase">
+                                            <span>6. Facebook e Instagram Ads</span>
+                                            <span class="duracion-clase">38 min</span>
+                                        </a>
+                                    </li>
+                                    <li class="clase-item">
+                                        <a href="#" class="enlace-clase">
+                                            <span>7. LinkedIn para negocios B2B</span>
+                                            <span class="duracion-clase">35 min</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="modulo-item">
+                                <button class="boton-modulo collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#modulo3">
+                                    Módulo 3: Email Marketing
+                                </button>
+                                <ul class="lista-clases collapse" id="modulo3">
+                                    <li class="clase-item">
+                                        <a href="#" class="enlace-clase">
+                                            <span>8. Fundamentos de email marketing</span>
+                                            <span class="duracion-clase">28 min</span>
+                                        </a>
+                                    </li>
+                                    <li class="clase-item">
+                                        <a href="#" class="enlace-clase">
+                                            <span>9. Segmentación y personalización</span>
+                                            <span class="duracion-clase">42 min</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

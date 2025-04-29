@@ -9,7 +9,7 @@
   class="mySwiper">
     <ng-container *ngFor="let curso of cursos">
       <swiper-slide class="swiper-slide">
-        <div class="card h-100 ">
+        <div class="card h-100 " (click)="detalleCurso(curso)">
           <img 
           [src]="curso.miniatura" 
           (error)="onImageError($event)"
@@ -19,7 +19,7 @@
             <h5 class="card-title">{{ curso.titulo }}</h5>
             <p class="card-text text-muted">{{ curso.descrip }}</p>
             <p class="card-text">Precio: <strong>${{ curso.precio }}</strong></p>
-            <button class="btn btn-primary btn-sm w-100 mt-auto" (click)="matricular(curso)">Matricularse</button>
+            <button class="btn btn-primary btn-sm w-100 mt-auto">Ver Curso</button>
           </div>
         </div>
       </swiper-slide>

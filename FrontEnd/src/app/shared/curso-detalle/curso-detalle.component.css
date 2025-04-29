@@ -1,0 +1,393 @@
+:root {
+    --color-principal: #4285F4;
+    --color-secundario: #34A853;
+    --color-acento: #FBBC05;
+    --color-contraste: #EA4335;
+    --color-fondo: #f8f9fa;
+    --color-texto: #212529;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+.barra-navegacion {
+    background-color: var(--color-principal);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 10px 0;
+}
+
+.logo-academika {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.boton-sesion {
+    background-color: white;
+    color: var(--color-principal);
+    border: none;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.boton-sesion:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contenedor-principal {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.seccion-video {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.contenedor-video {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Proporción 16:9 */
+    background-color: #000;
+}
+
+.marco-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: contain;
+}
+
+.informacion-clase {
+    padding: 20px;
+    border-bottom: 1px solid #eeeeee;
+    background-color: rgb(255, 255, 255);
+}
+
+.titulo-clase {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--color-texto);
+}
+
+.detalles-clase {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: #6c757d;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.detalle-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detalle-icono {
+    color: var(--color-principal);
+}
+
+.seccion-interaccion {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.acciones-video {
+    display: flex;
+    gap: 15px;
+}
+
+.boton-accion {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #6c757d;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.boton-accion:hover {
+    background-color: #f8f9fa;
+    color: var(--color-principal);
+}
+
+.boton-accion.activo {
+    color: var(--color-principal);
+}
+
+.contenedor-estrellas {
+    display: flex;
+    gap: 5px;
+}
+
+.estrella {
+    color: #ffc107;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+}
+
+.estrella:hover {
+    transform: scale(1.2);
+}
+
+.seccion-comentarios {
+    padding: 20px;
+}
+
+.titulo-seccion {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--color-texto);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.formulario-comentario {
+    margin-bottom: 20px;
+}
+
+.entrada-comentario {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 15px;
+    resize: none;
+    transition: all 0.3s;
+}
+
+.entrada-comentario:focus {
+    border-color: var(--color-principal);
+    box-shadow: 0 0 0 0.2rem rgba(66, 133, 244, 0.25);
+}
+
+.boton-enviar {
+    background-color: var(--color-principal);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.boton-enviar:hover {
+    background-color: #3367d6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.comentario {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.comentario:last-child {
+    border-bottom: none;
+}
+
+.cabecera-comentario {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.usuario-comentario {
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+.fecha-comentario {
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+
+.texto-comentario {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.barra-lateral {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    height: fit-content;
+}
+
+.perfil-profesor {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.avatar-profesor {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid var(--color-principal);
+}
+
+.nombre-profesor {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.especialidad-profesor {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.contacto-profesor {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--color-principal);
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.contacto-profesor:hover {
+    text-decoration: underline;
+}
+
+.contenido-curso {
+    padding: 20px;
+}
+
+.titulo-contenido {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--color-texto);
+}
+
+.lista-modulos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modulo-item {
+    margin-bottom: 10px;
+}
+
+.boton-modulo {
+    width: 100%;
+    text-align: left;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.boton-modulo:hover {
+    background-color: #e9ecef;
+}
+
+.boton-modulo.activo {
+    background-color: var(--color-principal);
+    color: white;
+    border-color: var(--color-principal);
+}
+
+.lista-clases {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.clase-item {
+    margin-bottom: 5px;
+}
+
+.enlace-clase {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    color: var(--color-texto);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.2s;
+}
+
+.enlace-clase:hover {
+    background-color: #f8f9fa;
+}
+
+.enlace-clase.activo {
+    color: var(--color-principal);
+    font-weight: 500;
+    background-color: rgba(66, 133, 244, 0.1);
+}
+
+.duracion-clase {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.badge-clase {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 10px;
+}
+
+.badge-actual {
+    background-color: var(--color-principal);
+    color: white;
+}
+
+.badge-completado {
+    background-color: var(--color-secundario);
+    color: white;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767.98px) {
+    .contenedor-principal {
+        padding: 10px;
+    }
+    
+    .titulo-clase {
+        font-size: 1.5rem;
+    }
+    
+    .barra-lateral {
+        margin-top: 20px;
+    }
+}
+
+body{
+    background-color: #627d97;
+}

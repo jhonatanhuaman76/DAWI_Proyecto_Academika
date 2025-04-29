@@ -1,1 +1,130 @@
-<p>curso-detalle works!</p>
+<div class="contenedor-principal">
+    <div class="row">
+        <!-- Sección izquierda (video y comentarios) -->
+        <div class="col-lg-8">
+            <!-- Módulo de reproducción de video -->
+            <div class="seccion-video">
+                <!-- Reproductor de video -->
+                <div class="contenedor-video">
+                    <img class="marco-video" src="{{curso?.miniatura}}" (error)="onImageError($event)" title="miniatura del curso" />
+                </div>
+                
+                <!-- Información de la clase -->
+                <div class="informacion-clase">
+                    <h1 class="titulo-clase">{{curso?.titulo}}</h1>
+                    <div class="detalles-clase">
+                        <div class="detalle-item">
+                            <i class="fas fa-graduation-cap detalle-icono"></i>
+                            <span>{{curso?.nombreCate}}</span>
+                        </div>
+                        <div class="detalle-item">
+                            <i class="fas fa-chalkboard-teacher detalle-icono"></i>
+                            <span>{{curso?.nombreInstructor}}</span>
+                        </div>
+                        <div class="detalle-item">
+                            <i class="fas fa-list-ol detalle-icono"></i>
+                            <span>Clase 3 de 24</span>
+                        </div>
+                        <div class="detalle-item">
+                            <i class="fas fa-clock detalle-icono"></i>
+                            <span>45 minutos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Barra lateral (información del profesor y contenido del curso) -->
+        <div class="col-lg-4">
+            <div class="barra-lateral">
+                <!-- Perfil del profesor -->
+                <div class="perfil-profesor">
+                    <button class="btn btn-primary">ADQUIRIR CURSO</button>
+                </div>
+                
+                <!-- Contenido del curso -->
+                <div class="contenido-curso">
+                    <h3 class="titulo-contenido">Contenido del curso</h3>
+                    
+                    <ul class="lista-modulos">
+                        <li class="modulo-item">
+                            <button class="boton-modulo" type="button" data-bs-toggle="collapse" data-bs-target="#modulo1">
+                                Módulo 1: Introducción al Marketing Digital
+                            </button>
+                            <ul class="lista-clases collapse show" id="modulo1">
+                                <li class="clase-item">
+                                    <a href="#" class="enlace-clase">
+                                        <span>1. Fundamentos del marketing online</span>
+                                        <span class="badge badge-completado">Completado</span>
+                                    </a>
+                                </li>
+                                <li class="clase-item">
+                                    <a href="#" class="enlace-clase">
+                                        <span>2. El ecosistema digital</span>
+                                        <span class="badge badge-completado">Completado</span>
+                                    </a>
+                                </li>
+                                <li class="clase-item">
+                                    <a href="#" class="enlace-clase activo">
+                                        <span>3. Estrategias SEO</span>
+                                        <span class="badge badge-actual">Actual</span>
+                                    </a>
+                                </li>
+                                <li class="clase-item">
+                                    <a href="#" class="enlace-clase">
+                                        <span>4. SEM y publicidad pagada</span>
+                                        <span class="duracion-clase">32 min</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="modulo-item">
+                            <button class="boton-modulo collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#modulo2">
+                                Módulo 2: Redes Sociales
+                            </button>
+                            <ul class="lista-clases collapse" id="modulo2">
+                                <li class="clase-item">
+                                    <a href="#" class="enlace-clase">
+                                        <span>5. Estrategia en redes sociales</span>
+                                        <span class="duracion-clase">40 min</span>
+                                    </a>
+                                </li>
+                                <li class="clase-item">
+                                    <a href="#" class="enlace-clase">
+                                        <span>6. Facebook e Instagram Ads</span>
+                                        <span class="duracion-clase">38 min</span>
+                                    </a>
+                                </li>
+                                <li class="clase-item">
+                                    <a href="#" class="enlace-clase">
+                                        <span>7. LinkedIn para negocios B2B</span>
+                                        <span class="duracion-clase">35 min</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="modulo-item">
+                            <button class="boton-modulo collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#modulo3">
+                                Módulo 3: Email Marketing
+                            </button>
+                            <ul class="lista-clases collapse" id="modulo3">
+                                <li class="clase-item">
+                                    <a href="#" class="enlace-clase">
+                                        <span>8. Fundamentos de email marketing</span>
+                                        <span class="duracion-clase">28 min</span>
+                                    </a>
+                                </li>
+                                <li class="clase-item">
+                                    <a href="#" class="enlace-clase">
+                                        <span>9. Segmentación y personalización</span>
+                                        <span class="duracion-clase">42 min</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

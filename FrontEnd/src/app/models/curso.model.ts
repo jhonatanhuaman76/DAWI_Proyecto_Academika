@@ -9,4 +9,5 @@ idCate: number;
 nombreCate: string;
 descripCate: string;
 instructor: number;
+nombreInstructor: string;
 }

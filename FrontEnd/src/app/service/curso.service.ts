@@ -22,4 +22,8 @@ export class CursoService {
   registrar(curso: ICurso) {
     return this.http.post<ICurso>(`${this.apiUrl}/registrar`, curso);
   }
+
+  buscar(id : any){
+    return this.http.get<ICurso>(`${this.apiUrl}/buscar/${id}`);
+  }
 }

@@ -41,4 +41,9 @@ public class CursoServiceImp implements CursoService {
         Curso curso = mapper.toEntity(requestDTO, categoria,instructor);
         return mapper.toDTO(repository.save(curso));
     }
+
+    @Override
+    public CursoResponseDTO buscar(Long id) {
+        return repository.findById(id).map(mapper::toDTO).orElse(null);
+    }
 }

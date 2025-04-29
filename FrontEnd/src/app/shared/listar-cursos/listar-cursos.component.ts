@@ -1,6 +1,7 @@
 import { Component, Input, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { ICurso } from '../../models/curso.model';
 import { NgFor } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-cursos',
@@ -16,6 +17,9 @@ export class ListarCursosComponent {
   idUnico: string = '';
   defaultImage: string = 'imagen-coming-soon.jpg';
 
+  constructor(private router: Router) {}
+
+
   ngOnInit(): void {
     this.idUnico = Math.random().toString(36).substring(2, 10);
   }
@@ -24,7 +28,7 @@ export class ListarCursosComponent {
     event.target.src = 'imagen-coming-soon.jpg';
   }
 
-  matricular(curso: ICurso): void {
-    alert(`Te has matriculado en el curso: ${curso.descrip}`);
+  detalleCurso(curso: ICurso): void {
+    this.router.navigate(['/curso-detalle', curso.id]);
   }
 }
