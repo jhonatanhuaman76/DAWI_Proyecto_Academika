@@ -23,4 +23,8 @@ export class ListarCursosComponent {
   onImageError(event: any): void {
     event.target.src = 'imagen-coming-soon.jpg';
   }
+
+  matricular(curso: ICurso): void {
+    alert(`Te has matriculado en el curso: ${curso.descrip}`);
+  }
 }

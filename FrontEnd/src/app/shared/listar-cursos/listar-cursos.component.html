@@ -4,7 +4,7 @@
   <swiper-container 
   [attr.navigation-next-el]="'.next-' + idUnico"
   [attr.navigation-prev-el]="'.prev-' + idUnico"
-  [spaceBetween]="50" 
+  [spaceBetween]="30" 
   [slidesPerView]="4" 
   class="mySwiper">
     <ng-container *ngFor="let curso of cursos">
@@ -15,10 +15,11 @@
           (error)="onImageError($event)"
           class="card-img-top"
           alt="imagen del curso">
-          <div class="card-body">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">{{ curso.titulo }}</h5>
             <p class="card-text text-muted">{{ curso.descrip }}</p>
             <p class="card-text">Precio: <strong>${{ curso.precio }}</strong></p>
+            <button class="btn btn-primary btn-sm w-100 mt-auto" (click)="matricular(curso)">Matricularse</button>
           </div>
         </div>
       </swiper-slide>
