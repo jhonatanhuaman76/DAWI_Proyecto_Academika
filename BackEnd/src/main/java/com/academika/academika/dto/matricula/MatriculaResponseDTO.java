@@ -14,9 +14,13 @@ public class MatriculaResponseDTO {
 
     private Long id;
     private LocalDate fecha;
-    //----
+    //--- De User
     private User estudiante;
+    private User nombre;
+    //--- De Curso
     private Curso curso;
+    private Curso titulo;
+    private Curso precio;
 
 
 }

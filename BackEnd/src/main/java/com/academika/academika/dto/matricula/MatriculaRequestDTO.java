@@ -14,6 +14,7 @@ public class MatriculaRequestDTO {
     private LocalDate fecha;
     //----
     private User estudiante;
+    private User nombre;
     private Curso curso;
 
 }
