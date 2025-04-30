@@ -8,4 +8,9 @@ import java.util.List;
 public interface UserService {
     List<UserResponseDTO> listar();
     UserResponseDTO registrar(UserRequestDTO requestDTO);
+    //Métodos adicionales
+    UserResponseDTO obtenerPorId(Long id);
+    void eliminar(Long id);
+    UserResponseDTO actualizar(Long id, UserRequestDTO requestDTO);
+
 }

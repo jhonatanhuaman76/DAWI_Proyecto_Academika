@@ -7,13 +7,13 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Table(name = "tblUser")
+@Table(name = "tblUsuario")
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user")

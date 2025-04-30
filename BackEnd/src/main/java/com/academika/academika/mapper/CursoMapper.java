@@ -5,7 +5,7 @@ import com.academika.academika.dto.curso.CursoResponseDTO;
 import com.academika.academika.dto.curso.CursoResumenDTO;
 import com.academika.academika.entity.Categoria;
 import com.academika.academika.entity.Curso;
-import com.academika.academika.entity.User;
+import com.academika.academika.entity.Usuario;
 import org.mapstruct.*;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
 public interface CursoMapper {
 
     @Mapping(target = "id", ignore = true)
-    Curso toEntity(CursoRequestDTO requestDTO, @Context Categoria categoria, @Context User instructor);
+    Curso toEntity(CursoRequestDTO requestDTO, @Context Categoria categoria, @Context Usuario instructor);
 
     @Mapping(source = "instructor.id", target = "instructor")
     @Mapping(source = "instructor.nombre", target = "nombreInstructor")
@@ -28,7 +28,7 @@ public interface CursoMapper {
     List<CursoResumenDTO> toResumenDTOList(List<Curso> cursos);
 
     @AfterMapping
-    default void afterMapToEntity(@MappingTarget Curso entity, Categoria categoria, User instructor) {
+    default void afterMapToEntity(@MappingTarget Curso entity, Categoria categoria, Usuario instructor) {
         entity.setInstructor(instructor);
         entity.setCategoria(categoria);
     }
