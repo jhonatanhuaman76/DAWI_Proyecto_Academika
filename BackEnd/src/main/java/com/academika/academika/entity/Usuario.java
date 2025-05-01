@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Table(name = "tblUser")
+@Table(name = "tblUsuario")
 @Getter
 @Setter
 @Builder
@@ -19,7 +19,7 @@ public class Usuario {
     @Column(name = "id_user")
     private Long id;
 
-    @Column(name = "nombre_user", length = 250, nullable = false)
+    @Column(name = "nombre_user", length = 250, nullable = false,  unique = true)
     private String nombre;
 
     @Column(name = "fecha_nac_user", nullable = false)

@@ -11,4 +11,9 @@ public interface UserService {
     UserResponseDTO registrar(UserRequestDTO requestDTO);
     UserResponseDTO buscarPorRol(Long id, TipoRolUser rol);
     UserResponseDTO buscarPorInstructor(Long id);
+    //Métodos adicionales
+    UserResponseDTO obtenerPorId(Long id);
+    void eliminar(Long id);
+    UserResponseDTO actualizar(Long id, UserRequestDTO requestDTO);
+
 }
