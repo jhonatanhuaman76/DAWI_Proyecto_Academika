@@ -19,8 +19,11 @@ public class MatriculaResponseDTO {
     private Usuario nombre;
     //--- De Curso
     private Curso curso;
-    private Curso titulo;
-    private Curso precio;
+   // private Curso titulo;
+   // private Curso precio;
+   // private Curso categoria;
+   //-- Capitulo
+   // private Capitulo titulo_capitulo;
 
 
 }

@@ -15,6 +15,7 @@ public class MatriculaRequestDTO {
     //----
     private Usuario estudiante;
     private Usuario nombre;
+    //---
     private Curso curso;
 
 }
