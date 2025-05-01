@@ -13,7 +13,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user")
@@ -31,6 +31,7 @@ public class User {
     @Column(name = "password_user", length = 250, nullable = false)
     private String password;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "rol_user", nullable = false)
     private TipoRolUser rol;
 

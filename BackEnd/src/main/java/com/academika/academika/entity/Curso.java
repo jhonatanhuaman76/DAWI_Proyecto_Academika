@@ -35,12 +35,12 @@ public class Curso {
     private String miniatura;
 
     @ManyToOne
-    @JoinColumn(name = "categoria_id")
+    @JoinColumn(name = "categoria_id", nullable = false)
     private Categoria categoria;
 
     @ManyToOne
-    @JoinColumn(name = "instructor_id")
-    private User instructor;
+    @JoinColumn(name = "instructor_id", nullable = false)
+    private Usuario instructor;
 
     @OneToMany(mappedBy = "curso")
     private List<Capitulo> capitulos;

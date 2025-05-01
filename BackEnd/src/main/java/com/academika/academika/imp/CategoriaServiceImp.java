@@ -1,6 +1,7 @@
 package com.academika.academika.imp;
 
 import com.academika.academika.dto.categoria.CategoriaCursosDTO;
+import com.academika.academika.dto.categoria.CategoriaResponseDTO;
 import com.academika.academika.dto.curso.CursoResumenDTO;
 import com.academika.academika.entity.Curso;
 import com.academika.academika.mapper.CategoriaMapper;
@@ -30,5 +31,10 @@ public class CategoriaServiceImp implements CategoriaService {
             categoriaCursosDTO.setList_cursos(cursosDTO);
             return categoriaCursosDTO;
         }).toList();
+    }
+
+    @Override
+    public List<CategoriaResponseDTO> listar() {
+        return categoriaRepository.findAll().stream().map(categoriaMapper::toDTO).toList();
     }
 }

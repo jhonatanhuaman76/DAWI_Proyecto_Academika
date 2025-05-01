@@ -19,11 +19,19 @@ export class CursoService {
     return this.http.get<ICurso[]>(`${this.apiUrl}/listar/masrecientes`);
   }
 
-  registrar(curso: ICurso) {
-    return this.http.post<ICurso>(`${this.apiUrl}/registrar`, curso);
+  guardar(curso: ICurso) {
+    return this.http.post<ICurso>(`${this.apiUrl}/guardar`, curso);
   }
 
   buscar(id : any){
     return this.http.get<ICurso>(`${this.apiUrl}/buscar/${id}`);
+  }
+
+  buscarPorInstructor(id : any){
+    return this.http.get<ICurso[]>(`${this.apiUrl}/instructor/${id}`);
+  }
+
+  borrar(id : any){
+    return this.http.get<any>(`${this.apiUrl}/borrar/${id}`);
   }
 }

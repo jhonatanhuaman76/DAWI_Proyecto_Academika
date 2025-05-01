@@ -1,0 +1,6 @@
+<div class="container pt-5">
+  <app-listar-cursos-instructor (seleccionar)="onSeleccionarCurso($event)" #lista/>
+  <app-registrar-curso (recargarTabla)="lista.cargarCursos()"/>
+  <app-editar-curso [curso]="cursoSeleccionado" (recargarTabla)="lista.cargarCursos()"/>
+  <app-eliminar-curso [curso]="cursoSeleccionado" (recargarTabla)="lista.cargarCursos()"/>
+</div>

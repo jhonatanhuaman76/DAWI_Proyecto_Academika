@@ -1,9 +1,11 @@
 package com.academika.academika.controller;
 
+import com.academika.academika.dto.matricula.MatriculaCursoDTO;
 import com.academika.academika.dto.matricula.MatriculaRequestDTO;
 import com.academika.academika.dto.matricula.MatriculaResponseDTO;
 import com.academika.academika.service.MatriculaService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RequestMapping("/matricula")
+@CrossOrigin(origins = "http://localhost:4200")
 public class MatriculaController {
 
     private final MatriculaService service;
@@ -22,8 +25,12 @@ public class MatriculaController {
     }
 
     @PostMapping
-    public MatriculaResponseDTO guardar(@RequestBody MatriculaRequestDTO requestDTO){
-        return service.registrar(requestDTO);
+    public ResponseEntity<MatriculaResponseDTO> guardar(@RequestBody MatriculaRequestDTO requestDTO) {
+        return ResponseEntity.ok().body(service.registrar(requestDTO));
     }
 
+    @GetMapping("/estudiante/{id}")
+    public List<MatriculaCursoDTO> listarPorEstudiante(@PathVariable Long id) {
+        return service.listarPorEstudiante(id);
+    }
 }

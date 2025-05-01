@@ -8,6 +8,6 @@ miniatura: string;
 idCate: number;
 nombreCate: string;
 descripCate: string;
-instructor: number;
+idInstructor: number;
 nombreInstructor: string;
 }

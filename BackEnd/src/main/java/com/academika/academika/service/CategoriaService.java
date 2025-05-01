@@ -8,4 +8,6 @@ import java.util.List;
 public interface CategoriaService {
 
     List<CategoriaCursosDTO> listarConCursos();
+
+    List<CategoriaResponseDTO> listar();
 }

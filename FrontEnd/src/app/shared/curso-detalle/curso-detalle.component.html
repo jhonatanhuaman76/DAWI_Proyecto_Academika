@@ -6,20 +6,20 @@
             <div class="seccion-video">
                 <!-- Reproductor de video -->
                 <div class="contenedor-video">
-                    <img class="marco-video" src="{{curso?.miniatura}}" (error)="onImageError($event)" title="miniatura del curso" />
+                    <img class="marco-video" src="{{curso.miniatura}}" (error)="onImageError($event)" title="miniatura del curso" />
                 </div>
                 
                 <!-- Información de la clase -->
                 <div class="informacion-clase">
-                    <h1 class="titulo-clase">{{curso?.titulo}}</h1>
+                    <h1 class="titulo-clase">{{curso.titulo}}</h1>
                     <div class="detalles-clase">
                         <div class="detalle-item">
                             <i class="fas fa-graduation-cap detalle-icono"></i>
-                            <span>{{curso?.nombreCate}}</span>
+                            <span>{{curso.nombreCate}}</span>
                         </div>
                         <div class="detalle-item">
                             <i class="fas fa-chalkboard-teacher detalle-icono"></i>
-                            <span>{{curso?.nombreInstructor}}</span>
+                            <span>{{curso.nombreInstructor}}</span>
                         </div>
                         <div class="detalle-item">
                             <i class="fas fa-list-ol detalle-icono"></i>
@@ -39,7 +39,7 @@
             <div class="barra-lateral">
                 <!-- Perfil del profesor -->
                 <div class="perfil-profesor">
-                    <button class="btn btn-primary">ADQUIRIR CURSO</button>
+                    <button class="btn btn-primary" (click)="adquirir()">ADQUIRIR CURSO</button>
                 </div>
                 
                 <!-- Contenido del curso -->

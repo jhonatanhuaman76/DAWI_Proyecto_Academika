@@ -25,13 +25,23 @@ public class CursoController {
         return imp.listarMasRecientes();
     }
 
-    @PostMapping("/registrar")
-    public CursoResponseDTO registrar(@RequestBody CursoRequestDTO requestDTO) {
-        return imp.registrar(requestDTO);
+    @PostMapping("/guardar")
+    public CursoResponseDTO guardar(@RequestBody CursoRequestDTO requestDTO) {
+        return imp.guardar(requestDTO);
     }
 
     @GetMapping("/buscar/{id}")
     public CursoResponseDTO buscar(@PathVariable Long id){
         return imp.buscar(id);
+    }
+
+    @GetMapping("/instructor/{id}")
+    public List<CursoResponseDTO> listarPorInstructor(@PathVariable Long id){
+        return imp.listarPorInstructor(id);
+    }
+
+    @GetMapping("/borrar/{id}")
+    public void borrar(@PathVariable Long id){
+        imp.borrar(id);
     }
 }

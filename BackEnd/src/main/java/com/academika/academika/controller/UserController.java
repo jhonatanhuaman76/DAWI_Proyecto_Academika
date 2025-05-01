@@ -23,4 +23,9 @@ public class UserController {
     public UserResponseDTO registrar(@RequestBody UserRequestDTO requestDTO) {
         return imp.registrar(requestDTO);
     }
+
+    @GetMapping("/instructor/{id}")
+    public UserResponseDTO buscarPorInstructor(@PathVariable Long id){
+        return imp.buscarPorInstructor(id);
+    }
 }

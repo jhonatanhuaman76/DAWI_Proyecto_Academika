@@ -17,6 +17,6 @@ public class CursoResponseDTO {
     private Long idCate;
     private String nombreCate;
     private String descripCate;
-    private Long instructor;
+    private Long idInstructor;
     private String nombreInstructor;
 }

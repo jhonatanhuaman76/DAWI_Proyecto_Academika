@@ -1,0 +1,70 @@
+<div class="card">
+  <p-table #dt2 [value]="cursos" [paginator]="true" [rows]="5" 
+    [globalFilterFields]="['titulo','nombreCate']"
+    [responsiveLayout]="'scroll'"
+    [tableStyle]="{ 'min-width': '60rem' }" [sortMode]="'multiple'" class="p-datatable-striped">
+
+    <ng-template #caption>
+      <h4>Lista de Cursos</h4>
+      <div class="d-flex flex-row justify-content-between align-items-center flex-wrap gap-2">
+        <div class="flex align-items-center gap-2">
+            <button 
+            pButton icon="pi pi-plus" 
+            label="Agregar Curso" class="p-button-success"  
+            data-bs-toggle="modal" data-bs-target="#cursoModal"
+            ></button>
+        </div>
+        <div class="flex">
+            <p-iconfield iconPosition="left" class="ml-auto">
+                <p-inputicon>
+                    <i class="pi pi-search"></i>
+                </p-inputicon>
+                <input
+                    #filter
+                    pInputText
+                    type="text"
+                    (input)="dt2.filterGlobal(filter.value, 'contains')"
+                    placeholder="Buscar curso"
+                    [ngClass]="{ 'p-inputtext-sm': true }"
+                />
+            </p-iconfield>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="titulo">Título <p-sortIcon field="titulo" /></th>
+        <th pSortableColumn="nombreCate">Categoría <p-sortIcon field="nombreCate" /></th>
+        <th pSortableColumn="precio">Precio <p-sortIcon field="precio" /></th>
+        <th pSortableColumn="fecha">Fecha de Creación <p-sortIcon field="fecha" /></th>
+        <th>Acciones</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+      <div class="flex justify-content-center align-items-center flex-column gap-2">
+        <i class="pi pi-exclamation-triangle" style="font-size: 3rem"></i>
+        <h5>No hay cursos</h5>
+        <p>Agrega un nuevo curso para comenzar</p>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-curso>
+      <tr>
+        <td>{{ curso.titulo }}</td>
+        <td>{{ curso.nombreCate }}</td>
+        <td>{{ curso.precio | currency: 'PEN ' : 'symbol'}}</td>
+        <td>{{ curso.fecha | date: 'dd/MM/yyyy' }}</td>
+        <td class="d-flex gap-2 align-items-center">
+          <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-success"
+            (click)="editarCurso(curso)" data-bs-toggle="modal" data-bs-target="#editarCursoModal"></button>
+          <button pButton icon="pi pi-trash" class="p-button-rounded p-button-danger"
+            (click)="eliminarCurso(curso)" data-bs-toggle="modal" data-bs-target="#confirmarEliminarModal"></button>
+          <button pButton icon="pi pi-eye" class="p-button-rounded p-button-info"
+           (click)="verCurso(curso)"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
