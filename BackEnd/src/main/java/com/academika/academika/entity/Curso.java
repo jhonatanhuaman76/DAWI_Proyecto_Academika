@@ -40,7 +40,7 @@ public class Curso {
 
     @ManyToOne
     @JoinColumn(name = "instructor_id")
-    private User instructor;
+    private Usuario instructor;
 
     @OneToMany(mappedBy = "curso")
     private List<Capitulo> capitulos;

@@ -4,7 +4,7 @@ import com.academika.academika.dto.curso.CursoRequestDTO;
 import com.academika.academika.dto.curso.CursoResponseDTO;
 import com.academika.academika.entity.Categoria;
 import com.academika.academika.entity.Curso;
-import com.academika.academika.entity.User;
+import com.academika.academika.entity.Usuario;
 import com.academika.academika.mapper.CursoMapper;
 import com.academika.academika.repository.CategoriaRepository;
 import com.academika.academika.repository.CursoRepository;
@@ -36,7 +36,7 @@ public class CursoServiceImp implements CursoService {
     public CursoResponseDTO registrar(CursoRequestDTO requestDTO) {
         requestDTO.setFecha(LocalDate.now());
         Categoria categoria = categoriaRepository.findById(requestDTO.getIdCategoria()).orElse(null);
-        User instructor = userRepository.findById((requestDTO.getIdInstructor())).orElse(null);
+        Usuario instructor = userRepository.findById((requestDTO.getIdInstructor())).orElse(null);
 
         Curso curso = mapper.toEntity(requestDTO, categoria,instructor);
         return mapper.toDTO(repository.save(curso));

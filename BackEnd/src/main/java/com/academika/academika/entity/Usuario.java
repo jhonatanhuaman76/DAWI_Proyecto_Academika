@@ -7,19 +7,19 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Table(name = "tblUser")
+@Table(name = "tblUsuario")
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user")
     private Long id;
 
-    @Column(name = "nombre_user", length = 250, nullable = false)
+    @Column(name = "nombre_user", length = 250, nullable = false,  unique = true)
     private String nombre;
 
     @Column(name = "fecha_nac_user", nullable = false)
@@ -31,6 +31,7 @@ public class User {
     @Column(name = "password_user", length = 250, nullable = false)
     private String password;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "rol_user", nullable = false)
     private TipoRolUser rol;
 
