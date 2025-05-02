@@ -18,12 +18,12 @@ public class MatriculaController {
 
     private final MatriculaService service;
 
-    @GetMapping
+    @GetMapping("/listar")
     public List<MatriculaResponseDTO> listar(){
         return service.listar();
     }
 
-    @PostMapping
+    @PostMapping("/guardar")
     public ResponseEntity<MatriculaResponseDTO> guardar(@RequestBody MatriculaRequestDTO requestDTO) {
         return ResponseEntity.ok().body(service.registrar(requestDTO));
     }
