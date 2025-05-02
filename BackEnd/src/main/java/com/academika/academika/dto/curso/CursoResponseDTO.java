@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Data
 @Builder
-public class CursoResponseDTO {
+public class    CursoResponseDTO {
     private Long id;
     private String titulo;
     private String descrip;

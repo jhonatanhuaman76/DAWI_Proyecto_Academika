@@ -45,6 +45,7 @@ public class AuthServiceImp implements AuthService {
                 .email(usuario.getEmail())
                 .rol(usuario.getRol().name())
                 .expirateAt(expiration)
+                .id(usuario.getId())
                 .build();
     }
 }

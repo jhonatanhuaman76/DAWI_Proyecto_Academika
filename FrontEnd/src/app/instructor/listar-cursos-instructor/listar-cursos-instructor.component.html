@@ -2,6 +2,7 @@
   <p-table #dt2 [value]="cursos" [paginator]="true" [rows]="5" 
     [globalFilterFields]="['titulo','nombreCate']"
     [responsiveLayout]="'scroll'"
+    [loading]="loading"
     [tableStyle]="{ 'min-width': '60rem' }" [sortMode]="'multiple'" class="p-datatable-striped">
 
     <ng-template #caption>
@@ -42,14 +43,6 @@
       </tr>
     </ng-template>
 
-    <ng-template pTemplate="emptymessage">
-      <div class="flex justify-content-center align-items-center flex-column gap-2">
-        <i class="pi pi-exclamation-triangle" style="font-size: 3rem"></i>
-        <h5>No hay cursos</h5>
-        <p>Agrega un nuevo curso para comenzar</p>
-      </div>
-    </ng-template>
-
     <ng-template pTemplate="body" let-curso>
       <tr>
         <td>{{ curso.titulo }}</td>
@@ -63,6 +56,18 @@
             (click)="eliminarCurso(curso)" data-bs-toggle="modal" data-bs-target="#confirmarEliminarModal"></button>
           <button pButton icon="pi pi-eye" class="p-button-rounded p-button-info"
            (click)="verCurso(curso)"></button>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="5" class="text-center">
+          <div class="flex justify-content-center align-items-center flex-column gap-2 p-4 text-center">
+            <i class="pi pi-inbox" style="font-size: 3rem; color: #999;"></i>
+            <h5>No hay datos disponibles</h5>
+            <p>Agrega nuevos registros para comenzar.</p>
+          </div>
         </td>
       </tr>
     </ng-template>

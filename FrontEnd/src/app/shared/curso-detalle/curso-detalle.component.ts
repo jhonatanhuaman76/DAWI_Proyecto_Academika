@@ -51,14 +51,22 @@ export class CursoDetalleComponent {
         });
       },
       error: (error) => {
-        Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: error.error.message,
-          confirmButtonText: 'Cerrar'
-        });
-
-        console.log(error);
+        if (error.status === 403) {
+          Swal.fire({
+            icon: 'warning',
+            title: 'Acceso denegado',
+            text: 'Inicia sesión como estudiante para matricularte en el curso.',
+            confirmButtonText: 'Cerrar'
+          });
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: error?.error?.message || 'Ocurrió un error inesperado.',
+            confirmButtonText: 'Cerrar'
+          });
+        }
+        console.log('Error capturado:', error);
       }
     });
   }

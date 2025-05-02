@@ -1,6 +1,6 @@
 spring:
   data-source:
-    url: jdbc:mysql://localhost:3307/bd_academika
+    url: jdbc:mysql://localhost:3306/bd_academika
     username: root
     password: mysql
     driver-class-name: com.mysql.cj.jdbc.Driver

@@ -20,6 +20,7 @@ import { CursoService } from '../../service/curso.service';
 export class ListarCursosInstructorComponent {
   @Output() seleccionar = new EventEmitter<ICurso>();
 
+  loading: boolean = true;
   cursos: ICurso[] = [];
   globalFilter: string = '';
   
@@ -30,9 +31,11 @@ export class ListarCursosInstructorComponent {
   }
 
   cargarCursos() {
-    this.cursoService.buscarPorInstructor(3).subscribe((data: ICurso[]) => {
+    const { id } = JSON.parse(localStorage.getItem('auth') || '');
+    this.cursoService.buscarPorInstructor(id).subscribe((data: ICurso[]) => {
       this.cursos = data;
       console.log(this.cursos);
+      this.loading = false;
     });
   }
 

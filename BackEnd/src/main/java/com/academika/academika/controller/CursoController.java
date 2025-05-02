@@ -11,7 +11,6 @@ import java.util.List;
 @RestController()
 @RequestMapping("/curso")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:4200")
 public class CursoController {
     private final CursoService imp;
 

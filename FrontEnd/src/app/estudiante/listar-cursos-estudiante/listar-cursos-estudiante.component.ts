@@ -12,7 +12,7 @@ import { NgFor, NgIf } from '@angular/common';
 })
 export class ListarCursosEstudianteComponent {
   cursos: IMatricula[] = [];
-  idEstudiante: number = 2;
+  idEstudiante: number = localStorage.getItem('auth') ? JSON.parse(localStorage.getItem('auth') || '').id : 0;
 
   constructor(private matriculaService: MatriculaService) { }
   

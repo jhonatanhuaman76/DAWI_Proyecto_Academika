@@ -14,7 +14,6 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RequestMapping("/matricula")
-@CrossOrigin(origins = "http://localhost:4200")
 public class MatriculaController {
 
     private final MatriculaService service;

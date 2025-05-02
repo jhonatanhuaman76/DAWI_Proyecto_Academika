@@ -1,0 +1,86 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="login-container w-100" style="max-width: 400px">
+    <div class="login-header text-center mb-4">
+      <h2>Academika</h2>
+      <p class="text-muted">Accede a tu cuenta</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email" class="form-control" formControlName="email" placeholder="ejemplo@correo.com" />
+      </div>
+
+      <div class="mb-3">
+        <label>Contraseña</label>
+        <div class="input-group">
+          <input [type]="showLoginPassword ? 'text' : 'password'" class="form-control" formControlName="password"
+            placeholder="Ingresa tu contraseña" />
+          <span class="input-group-text" (click)="togglePassword('login')" style="cursor: pointer">
+            <i class="pi" [class.pi-eye]="!showLoginPassword" [class.pi-eye-slash]="showLoginPassword"></i>
+          </span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary w-100" type="submit">Iniciar Sesión</button>
+    </form>
+
+    <div class="register-link text-center mt-3">
+      <p>¿No tienes una cuenta? <a data-bs-toggle="modal" data-bs-target="#registerModal"
+          style="cursor: pointer">Regístrate</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Registro -->
+<div class="modal fade" id="registerModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">Crear una cuenta</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="registerForm">
+          <div class="mb-3">
+            <label>Nombre</label>
+            <input type="text" class="form-control" formControlName="nombre" />
+          </div>
+
+          <div class="mb-3">
+            <label>Fecha de nacimiento</label>
+            <input type="date" class="form-control" formControlName="fechaNac" />
+          </div>
+
+          <div class="mb-3">
+            <label>Email</label>
+            <input type="email" class="form-control" formControlName="email" />
+          </div>
+
+          <div class="mb-3">
+            <label>Contraseña</label>
+            <div class="input-group">
+              <input [type]="showRegisterPassword ? 'text' : 'password'" class="form-control"
+                formControlName="password" />
+              <span class="input-group-text" (click)="togglePassword('register')" style="cursor: pointer">
+                <i class="pi" [class.pi-eye]="!showRegisterPassword" [class.pi-eye-slash]="showRegisterPassword"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label>Rol</label>
+            <select class="form-select" formControlName="rol">
+              <option value="" disabled selected>Selecciona un rol</option>
+              <option value="ESTUDIANTE">ESTUDIANTE</option>
+              <option value="INSTRUCTOR">INSTRUCTOR</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary w-100" (click)="onRegisterSubmit()">Registrarse</button>
+      </div>
+    </div>
+  </div>
+</div>
