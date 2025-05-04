@@ -27,7 +27,7 @@ export class ListarCursosInstructorComponent {
   constructor(private cursoService: CursoService) { }
   
   ngOnInit() {
-    this.cargarCursos();
+      this.cargarCursos();
   }
 
   cargarCursos() {

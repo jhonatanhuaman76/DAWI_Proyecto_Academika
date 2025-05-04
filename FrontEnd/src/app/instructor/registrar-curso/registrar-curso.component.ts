@@ -21,7 +21,7 @@ export class RegistrarCursoComponent {
 
   categorias: ICategoria[] = [];
 
-  ID_INSTRUCTOR: number = 3;
+  ID_INSTRUCTOR: number = localStorage.getItem('auth') ? JSON.parse(localStorage.getItem('auth') || '').id : 0;
 
   constructor(
     private fb: FormBuilder,
@@ -61,6 +61,7 @@ export class RegistrarCursoComponent {
             timer: 1500
           });
           formDirective.resetForm();
+          this.cursoForm.get('idInstructor')?.setValue(this.ID_INSTRUCTOR);
           this.recargarTabla.emit();
         },
         error: (error) => {

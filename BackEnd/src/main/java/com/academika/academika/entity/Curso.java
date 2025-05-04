@@ -45,6 +45,6 @@ public class Curso {
     @OneToMany(mappedBy = "curso")
     private List<Capitulo> capitulos;
 
-    @OneToMany(mappedBy = "curso")
+    @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
     private List<Matricula> matriculas;
 }

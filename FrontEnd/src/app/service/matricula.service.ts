@@ -11,7 +11,7 @@ export class MatriculaService {
   constructor(private http: HttpClient) { }
 
   registrar(matricula : IMatricula) {
-    return this.http.post<IMatricula>(`${this.apiUrl}`, matricula);
+    return this.http.post<IMatricula>(`${this.apiUrl}/guardar`, matricula);
   }
 
   obtenerPorEstudiante(idEstudiante: number) {

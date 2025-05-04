@@ -6,11 +6,11 @@ import { InstructorComponent } from './instructor/instructor.component';
 import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
+  {path: 'login', component: LoginComponent},
   { path: 'home', component: HomeComponent },
-  {path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'curso-detalle/:id', component: CursoDetalleComponent },
   { path: 'estudiante/mis-cursos', component: EstudianteComponent },
   { path: 'instructor/mis-cursos', component: InstructorComponent },
-  {path: 'login', component: LoginComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
