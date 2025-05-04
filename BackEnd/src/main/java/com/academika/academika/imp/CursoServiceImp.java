@@ -4,6 +4,7 @@ import com.academika.academika.dto.curso.CursoRequestDTO;
 import com.academika.academika.dto.curso.CursoResponseDTO;
 import com.academika.academika.entity.Categoria;
 import com.academika.academika.entity.Curso;
+import com.academika.academika.entity.TipoRolUser;
 import com.academika.academika.entity.Usuario;
 import com.academika.academika.infra.exception.CustomException;
 import com.academika.academika.mapper.CursoMapper;
@@ -38,11 +39,16 @@ public class CursoServiceImp implements CursoService {
 
     @Override
     public CursoResponseDTO guardar(CursoRequestDTO requestDTO) {
-        Categoria categoria = categoriaRepository.findById(requestDTO.getIdCate()).orElseThrow(
-                () -> new CustomException("No existe la categoria")
-        );
         Usuario instructor = userRepository.findById((requestDTO.getIdInstructor())).orElseThrow(
                 () -> new CustomException("No existe el instructor")
+        );
+
+        if(!(instructor.getRol().equals(TipoRolUser.INSTRUCTOR) || instructor.getRol().equals(TipoRolUser.ADMIN))) {
+            throw new CustomException("El usuario no es instructor o administrador");
+        }
+
+        Categoria categoria = categoriaRepository.findById(requestDTO.getIdCate()).orElseThrow(
+                () -> new CustomException("No existe la categoria")
         );
         Curso curso = mapper.toEntity(requestDTO, categoria, instructor);
         System.out.println(curso.getFecha());

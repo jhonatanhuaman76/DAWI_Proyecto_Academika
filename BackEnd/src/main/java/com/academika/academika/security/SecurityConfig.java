@@ -26,49 +26,6 @@ import java.util.List;
 public class SecurityConfig {
     private final CustomUserDetailService userDetailService;
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
-/*
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                .csrf(csrf -> csrf.disable())
-                .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authorizeHttpRequests(auth -> auth
-                        // Públicos
-                        .requestMatchers("/auth/login", "/auth/registrar", "/curso/listar/masrecientes", "/categoria/listar-con-cursos").permitAll() //NO HAY PROBLEMAS
-
-                        // ADMIN e INSTRUCTOR pueden acceder al resto de /curso/**
-                        .requestMatchers("/curso/main/**").hasAnyRole("ADMIN", "INSTRUCTOR") // NO DEJA CON ADMIN NI INSTRUCTOR
-
-                        // /curso/listar accesible por todos los roles
-                        .requestMatchers("/curso/student/listar").hasRole("ESTUDIANTE") //NO HAY PROBLEMAS
-
-
-
-
-
-                        // matricula/guardar y matricula/estudiante para ESTUDIANTE y ADMIN
-                        .requestMatchers("/matricula/estudiante/**").hasAnyRole("ADMIN", "ESTUDIANTE") //NO HAY PROBLEMAS
-                        .requestMatchers("/matricula/guardar").hasAnyRole("ADMIN", "ESTUDIANTE") //NO DEJA CON ESTUDIANTE NI ADMIN
-
-                        // /curso/listar accesible por todos los roles
-                        .requestMatchers("/curso/listar").hasAnyRole("ADMIN", "INSTRUCTOR", "ESTUDIANTE") //NO HAY PROBLEMAS
-
-
-
-                        // ADMIN puede acceder a todo lo siguiente
-                        .requestMatchers("/user/**", "/matricula/**", "/categoria/**").hasRole("ADMIN") //FUNCIONA CATEGORIA
-                        // HAY PROBLEMAS RELACIONADOS CON LOS CAMPOS ANTERIORES
-
-                        // Todo lo demás requiere autenticación
-                        .anyRequest().authenticated()
-                )
-                .authenticationProvider(provider())
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
-
-        return http.build();
-    }*/
-
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -81,10 +38,10 @@ public class SecurityConfig {
                         .requestMatchers("/auth/login", "/auth/registrar", "/curso/listar/masrecientes", "/categoria/listar-con-cursos", "/curso/buscar/**").permitAll()
 
                         // ESTUDIANTE
-                        .requestMatchers("/matricula/estudiante/**", "/matricula/guardar").hasAnyAuthority(TipoRolUser.ESTUDIANTE.toString())
+                        .requestMatchers("/matricula/estudiante/**", "/matricula/guardar").hasAnyAuthority(TipoRolUser.ESTUDIANTE.toString(), TipoRolUser.ADMIN.toString())
 
                         // INSTRUCTOR
-                        .requestMatchers("/curso/guardar", "/curso/instructor/**", "/curso/borrar/**", "/categoria/listar").hasAnyAuthority(TipoRolUser.INSTRUCTOR.toString())
+                        .requestMatchers("/curso/guardar", "/curso/instructor/**", "/curso/borrar/**", "/categoria/listar").hasAnyAuthority(TipoRolUser.INSTRUCTOR.toString(), TipoRolUser.ADMIN.toString())
 
                         // ADMIN
                         .requestMatchers("/user/**", "/matricula/**", "/categoria/**", "/curso/**", "/auth/**").hasAnyAuthority(TipoRolUser.ADMIN.toString())

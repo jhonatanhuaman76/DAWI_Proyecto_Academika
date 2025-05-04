@@ -40,8 +40,8 @@ public class MatriculaServiceImp implements MatriculaService {
         Usuario estudiante = userRepository.findById(request.getIdEstudiante()).orElse(null);
 
         assert estudiante != null;
-        if(!estudiante.getRol().equals(TipoRolUser.ESTUDIANTE)) {
-            throw new CustomException("El usuario no es estudiante");
+        if(!(estudiante.getRol().equals(TipoRolUser.ESTUDIANTE) || estudiante.getRol().equals(TipoRolUser.ADMIN))) {
+            throw new CustomException("El usuario no es estudiante o administrador");
         }
 
         if(matriculaRepository.existsByEstudianteAndCurso(estudiante, curso)) {
