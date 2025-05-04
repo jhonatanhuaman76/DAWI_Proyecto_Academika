@@ -31,7 +31,7 @@ export class ListarCursosInstructorComponent {
   }
 
   cargarCursos() {
-    const { id } = JSON.parse(localStorage.getItem('auth') || '');
+    const { id } = JSON.parse(localStorage.getItem('auth') || '{ "id" : 0}');
     this.cursoService.buscarPorInstructor(id).subscribe((data: ICurso[]) => {
       this.cursos = data;
       console.log(this.cursos);

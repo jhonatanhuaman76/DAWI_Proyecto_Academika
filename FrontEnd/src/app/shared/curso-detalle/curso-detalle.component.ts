@@ -39,7 +39,7 @@ export class CursoDetalleComponent {
 
   adquirir(){
     this.matricula.idCurso = this.curso.id;
-    this.matricula.idEstudiante = JSON.parse(localStorage.getItem('auth') || '').id || 0;
+    this.matricula.idEstudiante = localStorage.getItem('auth') ? JSON.parse(localStorage.getItem('auth') || '').id : 0;
 
     this.matriculaService.registrar(this.matricula).subscribe({
       next: (response) => {
