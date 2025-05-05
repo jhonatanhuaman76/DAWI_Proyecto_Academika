@@ -49,8 +49,8 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
       console.log(email, password);
-      this.authService.login(email, password).subscribe(
-        (response) => {
+      this.authService.login(email, password).subscribe({
+        next: (response) => {
           Swal.fire({
             icon: 'success',
             title: 'Inicio de sesión exitoso',
@@ -61,9 +61,25 @@ export class LoginComponent {
             localStorage.setItem('auth', JSON.stringify(response));
             window.location.href = '/home';
           });
+        },
+        error: (error) => {
+          if (error.status === 403) {
+            Swal.fire({
+              icon: 'error',
+              title: 'Autenticación fallida',
+              text: 'Tus credenciales no son válidas.',
+              showConfirmButton: true
+            });
+          } 
         }
-      );
-    }
+      });
+    } else
+      Swal.fire({
+        icon: 'error',
+        title: 'Autenticación fallida',
+        text: 'Tus credenciales no son válidas.',
+        showConfirmButton: true
+    });
   }
 
   onRegisterSubmit() { 
